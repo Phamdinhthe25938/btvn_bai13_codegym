@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body >
+     <span>Ban co</span>
+     <p id="dispaly"></p>
+     <button onclick="changePlay()" id="btn-change">Change</button>
+</body>
+</html>
+<script>
+    let data ='';
+    let broad=[];
+    for(let i=0;i<3;i++){
+        broad[i]=  Array('.','.','.');
+    }
+    for(let j =0;j<3;j++){
+        data +="</br>";
+        for (let i=0;i<3;i++){
+            data += broad[i][j]+'&nbsp&nbsp&nbsp&nbsp'
+        }
+    }
+    let dispaly = document.getElementById('dispaly');
+    dispaly.innerHTML = data;
+    let tem =1;
+    function changePlay() {
+        data = '';
+        let positionX = parseInt(prompt("X:"))
+        let positionY = parseInt(prompt("Y:"))
+            if (tem === 1) {
+                broad[positionX][positionY] = 'x';
+                tem=2;
+                for (let j = 0; j < 3; j++) {
+                    data += "</br>";
+                    for (let i = 0; i < 3; i++) {
+                        data += broad[i][j] + '&nbsp&nbsp&nbsp&nbsp'
+                    }
+                }
+            } else if(tem===2){
+                broad[positionX][positionY] = '0';
+                tem=1;
+                for (let j = 0; j < 3; j++) {
+                    data += "</br>";
+                    for (let i = 0; i < 3; i++) {
+                        data += broad[i][j] + '&nbsp&nbsp&nbsp&nbsp'
+                    }
+                }
+            }
+        dispaly.innerHTML = data;
+    }
+</script>
