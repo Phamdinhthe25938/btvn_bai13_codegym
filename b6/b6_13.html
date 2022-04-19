@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <button onclick="bai1()">BAI 1</button>
+    <button onclick="bai2()">BAI 2</button>
+    <button onclick="bai3()">BAI 3</button>
+    <button onclick="bai4()">BAI 4</button>
+    <button onclick="bai5()">BAI 5</button>
+    <button onclick="bai6()">BAI 6</button>
+</body>
+</html>
+<script>
+    function bai1(){
+        let a = [
+            [1, 2, 1, 24],
+            [8, 11, 9, 4],
+            [7, 0, 7, 27],
+            [7, 4, 28, 14],
+            [3, 10, 26, 7]
+        ];
+        for (let i=0;i<a.length;i++){
+            console.log('row:',i)
+            for (let j =0;j<a.length;j++){
+                console.log(a[i][j]+',')
+            }
+        }
+    }
+    function bai2(){
+        let array=Array();
+        let a = parseInt(prompt('nhap so ky tu muon nhap:'));
+        for (let i=0;i<a;i++){
+            array[i]= prompt('nhap ki tu '+i);
+        }
+        let newArray= array.reverse();
+        console.log(newArray);
+    }
+    function bai3(){
+        let a= parseInt(prompt('nhap vao do dai mang :'));
+        let array =Array();
+        for(let i=0;i<a;i++){
+            array[i]=prompt('nhap ki tu'+i+' :')
+        }
+        let array1 = array.toString();
+        alert(array1)
+        count=0;
+        console.log('so luong:')
+        for (let j in array1){
+            count++;
+        }
+        console.log(count)
+    }
+    function bai4(){
+        let a = prompt("nhap vao mot chuoi :");
+        let count =0
+        for(let i in a){
+            if(a[i]!==' '&& a[i-1]=== ' '){
+                count++
+            }
+        }
+        console.log('phan tu co '+(count+1)+' tu')
+    }
+    function bai5(){
+        let a = prompt("nhap vao  chuoi a :");
+        console.log(a)
+        let b = prompt("nhap vao chuoi b :");
+        let c='';
+        let d='';
+            for (let i in a){
+                c +=a[i]
+            }
+           for(let j in b ){
+               d +=a[j]
+           }
+           if(c===d){
+               console.log('hai chuoi giong nhau')
+           }
+           else{
+               console.log('hai chuoi khac nhau')
+           }
+    }
+    function bai6(){
+        let array =Array();
+        let a = parseInt(prompt("nhap do dai mang :"));
+        for (let i=0;i<a;i++){
+            array[i]=prompt("nhap phan tu:"+i)
+        }
+        let subArray= array.toString();
+        let newArray = subArray.replace('-','_')
+        console.log(newArray)
+    }
+
+</script>
