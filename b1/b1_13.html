@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+     <button onclick="bai1()">Bai 1</button>
+     <button onclick="bai2()">Bai 2</button>
+     <button onclick="bai3()">Bai 3</button>
+</body>
+</html>
+<script>
+<!--    bai 1:-->
+     function bai1(){
+         let myColor=['red','green','white','black'];
+         let newMyColor = myColor.join(',')
+         console.log("'"+newMyColor+"'")
+         // let initMyColor = ' ';
+         // let  newMyColor='';
+         // for(let i=0;i<myColor.length;i++){
+         //      newMyColor += initMyColor.concat(myColor[i])+','
+         // }
+         // console.log("'"+newMyColor+"'");
+     }
+
+// bai 2
+       function bai2(){
+          let num= prompt("nhap 1 so");
+          let str= num.toString();
+          let result = [str[0]];
+          for(let i=1;i<str.length;i++){
+              if(str[i-1]%2===0 && str[i]%2===0){
+                  result.push('-',str[i]);
+              }
+              else{
+                  result.push(str[i])
+              }
+          }
+          console.log(result.join(''))
+    }
+//bai 3;
+        function bai3(){
+              let  name = prompt("nhap ky tu :");
+              let str = name.toString();
+              let result =[];
+              for(let i=0;i<str.length;i++){
+                  if(str[i]===str[i].toUpperCase()){
+                      result.push(str[i].toLowerCase());
+                  }
+                  else{
+                      result.push(str[i].toUpperCase());
+                  }
+              }
+              console.log(result.join(''))
+        }
+</script>
