@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Nhap mot tu vung tieng viet</h2>
+<input type="text" name="" id="value-input">
+<button onclick="search()">Tim kiem</button>
+<p id="dispaly" ></p>
+</body>
+</html>
+<script>
+    let english= ['apple','banana','lemon','mango','orange'];
+    let vietnam =['táo','chuối','dưa hấu','xoài','cam'];
+    function ktra(){
+        let valueInput = document.getElementById('value-input').value;
+          for (let a in vietnam){
+              if(valueInput===vietnam[a]){
+                  return true;
+              }
+          }
+          return false;
+    }
+    function search(){
+        let dispaly = document.getElementById('dispaly');
+         if(ktra()){
+             let valueInput = document.getElementById('value-input').value;
+             dispaly.innerHTML = english[vietnam.indexOf(valueInput)]
+         }
+         else{
+             alert("nono");
+         }
+    }
+</script>
